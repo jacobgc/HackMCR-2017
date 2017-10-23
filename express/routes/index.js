@@ -5,7 +5,7 @@ var r = require('rethinkdbdash')();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', {});
+    res.render('index', {login : login || null});
 });
 
 router.get('/logout', isLoggedIn, function(req, res) {
@@ -17,12 +17,12 @@ router.use('/', notLoggedIn, function(req, res, next) {
     next();
 });
 
-router.get('/profile', isLoggedIn, function(req, res, next) {
-    res.render('profile', {});
+router.get('/profile', function(req, res, next) {
+    res.render('profile', {login : login || null});
 });
 
 router.get('/signup', function(req, res, next) {
-    res.render('signup');
+    res.render('signup',{login : login || null});
 });
 
 router.post('/signup', passport.authenticate('local.signup', {
@@ -31,7 +31,7 @@ router.post('/signup', passport.authenticate('local.signup', {
 }));
 
 router.get('/login', function(req, res, next) {
-    res.render('login');
+    res.render('login', {login : login || null});
 });
 
 router.post('/login', passport.authenticate('local.signin', {
@@ -40,11 +40,11 @@ router.post('/login', passport.authenticate('local.signin', {
 }));
 
 router.get('/events', function(req, res, next) {
-    res.render('events', {});
+    res.render('events', {login : login || null});
 });
 
 router.get('/eventloc', function(req, res, next) {
-    res.render('eventLocation', {});
+    res.render('eventLocation', { login : login || null});
 });
 
 module.exports = router;
