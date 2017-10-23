@@ -8,6 +8,19 @@ router.get('/', function(req, res, next) {
     res.render('index', {});
 });
 
+router.get('/logout', isLoggedIn, function(req, res) {
+    req.logout();
+    res.redirect('/');
+});
+
+router.use('/', notLoggedIn, function(req, res, next) {
+    next();
+});
+
+router.get('/profile', isLoggedIn, function(req, res, next) {
+    res.render('profile', {});
+});
+
 router.get('/signup', function(req, res, next) {
     res.render('signup');
 });
@@ -32,11 +45,6 @@ router.get('/events', function(req, res, next) {
 
 router.get('/eventloc', function(req, res, next) {
     res.render('eventLocation', {});
-});
-
-
-router.get('/profile', function(req, res, next) {
-    res.render('profile', {});
 });
 
 module.exports = router;
