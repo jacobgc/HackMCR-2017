@@ -1,0 +1,35 @@
+2017-10-23T12:57:32.800406004 0.028248s notice: Recursively removing directory /home/dean/code/HackMCR-2017/express/rethinkdb_data/tmp
+2017-10-23T12:57:32.810865859 0.038707s notice: Initializing directory /home/dean/code/HackMCR-2017/express/rethinkdb_data
+2017-10-23T12:57:32.810978129 0.038819s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/home/dean/code/HackMCR-2017/express/rethinkdb_data' did not already exist or is empty.)
+2017-10-23T12:57:32.811008341 0.038849s notice: Running rethinkdb 2.3.6~0zesty (GCC 5.4.1)...
+2017-10-23T12:57:32.813791604 0.041635s notice: Running on Linux 4.10.0-37-generic x86_64
+2017-10-23T12:57:32.814150562 0.041992s notice: Loading data from directory /home/dean/code/HackMCR-2017/express/rethinkdb_data
+2017-10-23T12:57:32.892704531 0.120546s info: Automatically using cache size of 2186 MB
+2017-10-23T12:57:32.893061535 0.120902s notice: Listening for intracluster connections on port 29015
+2017-10-23T12:57:32.894023613 0.121865s notice: Listening for client driver connections on port 28015
+2017-10-23T12:57:32.894138358 0.121979s notice: Listening for administrative HTTP connections on port 8080
+2017-10-23T12:57:32.894140485 0.121981s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T12:57:32.894142693 0.121983s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T12:57:32.894144039 0.121985s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T12:57:32.894148598 0.121989s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-10-23T12:57:32.894150723 0.121991s notice: Server ready, "dean_ThinkPad_8qn" 57d81f57-e03c-4e9e-a652-3c7649dcf7f8
+2017-10-23T12:57:41.987670953 9.215513s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-10-23T12:57:41.987796252 9.215638s notice: Shutting down client connections...
+2017-10-23T12:57:41.987949987 9.215791s notice: All client connections closed.
+2017-10-23T12:57:41.987954683 9.215796s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-10-23T12:57:41.989083952 9.216926s notice: Storage engine shut down.
+2017-10-23T14:21:06.716549833 0.020276s notice: Running rethinkdb 2.3.6~0zesty (GCC 5.4.1)...
+2017-10-23T14:21:06.718686820 0.022415s notice: Running on Linux 4.10.0-37-generic x86_64
+2017-10-23T14:21:06.718727218 0.022453s notice: Loading data from directory /home/dean/code/HackMCR-2017/express/rethinkdb_data
+2017-10-23T14:21:06.745580333 0.049306s info: Automatically using cache size of 3114 MB
+2017-10-23T14:21:06.746518001 0.050244s notice: Listening for intracluster connections on port 29015
+2017-10-23T14:21:06.749124970 0.052851s notice: Listening for client driver connections on port 28015
+2017-10-23T14:21:06.749244751 0.052970s notice: Listening for administrative HTTP connections on port 8080
+2017-10-23T14:21:06.749246594 0.052972s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T14:21:06.749248996 0.052975s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T14:21:06.749250699 0.052976s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T14:21:06.749253000 0.052979s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-10-23T14:21:06.749255343 0.052981s notice: Server ready, "dean_ThinkPad_8qn" 57d81f57-e03c-4e9e-a652-3c7649dcf7f8
+2017-10-23T15:01:42.470767280 2132.078402s info: Table d3bf9f63-3398-40f0-823b-274c7962874d: Starting a new Raft election for term 1.
+2017-10-23T15:01:42.471441481 2132.079076s info: Table d3bf9f63-3398-40f0-823b-274c7962874d: Added replica on this server.
+2017-10-23T15:01:42.482858552 2132.090493s info: Table d3bf9f63-3398-40f0-823b-274c7962874d: This server is Raft leader for term 1. Latest log index is 0.
