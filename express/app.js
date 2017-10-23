@@ -26,15 +26,17 @@ app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
   secret: 'randompassword',
   store: new redisStore({ host: 'localhost', port: 6379, client: client, ttl: 86400 }),
-  resave: false,
-  saveUninitialized: false
+  resave: true,
+  saveUninitialized: true
 }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
@@ -46,11 +48,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-
-
 app.use(flash());
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.use(function(req, res, next) {
   res.locals.login = req.isAuthenticated();
