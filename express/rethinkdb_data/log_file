@@ -33,3 +33,56 @@
 2017-10-23T15:01:42.470767280 2132.078402s info: Table d3bf9f63-3398-40f0-823b-274c7962874d: Starting a new Raft election for term 1.
 2017-10-23T15:01:42.471441481 2132.079076s info: Table d3bf9f63-3398-40f0-823b-274c7962874d: Added replica on this server.
 2017-10-23T15:01:42.482858552 2132.090493s info: Table d3bf9f63-3398-40f0-823b-274c7962874d: This server is Raft leader for term 1. Latest log index is 0.
+2017-10-23T23:18:49.549770960 0.065573s notice: Recursively removing directory /home/j/dev/HackMCR-2017/express/rethinkdb_data/tmp
+2017-10-23T23:18:49.578382704 0.094183s notice: Running rethinkdb 2.3.6~0zesty (GCC 5.4.1)...
+2017-10-23T23:18:49.585271839 0.101074s notice: Running on Linux 4.10.0-37-generic x86_64
+2017-10-23T23:18:49.585358165 0.101158s notice: Loading data from directory /home/j/dev/HackMCR-2017/express/rethinkdb_data
+2017-10-23T23:18:49.658463446 0.174264s info: Automatically using cache size of 2162 MB
+2017-10-23T23:18:49.659160813 0.174960s notice: Listening for intracluster connections on port 29015
+2017-10-23T23:18:49.702158994 0.217959s notice: Listening for client driver connections on port 28015
+2017-10-23T23:18:49.702769159 0.218569s notice: Listening for administrative HTTP connections on port 8080
+2017-10-23T23:18:49.702772820 0.218572s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T23:18:49.702774582 0.218574s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T23:18:49.702777042 0.218576s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T23:18:49.702798241 0.218598s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-10-23T23:18:49.702800400 0.218600s notice: Server ready, "dean_ThinkPad_8qn" 57d81f57-e03c-4e9e-a652-3c7649dcf7f8
+2017-10-23T23:18:51.577714328 2.093515s info: Table d3bf9f63-3398-40f0-823b-274c7962874d: Starting a new Raft election for term 2.
+2017-10-23T23:18:51.652072269 2.167873s info: Table d3bf9f63-3398-40f0-823b-274c7962874d: This server is Raft leader for term 2. Latest log index is 2.
+2017-10-23T23:19:06.033232283 16.549033s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-10-23T23:19:06.033443276 16.549244s notice: Shutting down client connections...
+2017-10-23T23:19:06.033669413 16.549470s notice: All client connections closed.
+2017-10-23T23:19:06.033678944 16.549479s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-10-23T23:19:06.039216182 16.555017s notice: Storage engine shut down.
+2017-10-23T23:19:10.940219330 0.094716s notice: Running rethinkdb 2.3.6~0zesty (GCC 5.4.1)...
+2017-10-23T23:19:10.945777628 0.100278s notice: Running on Linux 4.10.0-37-generic x86_64
+2017-10-23T23:19:10.945927287 0.100424s notice: Loading data from directory /home/j/dev/HackMCR-2017/express/rethinkdb_data
+2017-10-23T23:19:11.023552756 0.178049s info: Automatically using cache size of 2145 MB
+2017-10-23T23:19:11.025075190 0.179572s notice: Listening for intracluster connections on port 29015
+2017-10-23T23:19:11.062374051 0.216870s notice: Listening for client driver connections on port 28015
+2017-10-23T23:19:11.063064587 0.217561s notice: Listening for administrative HTTP connections on port 8080
+2017-10-23T23:19:11.063068763 0.217564s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T23:19:11.063071647 0.217567s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T23:19:11.063075135 0.217571s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T23:19:11.063093054 0.217589s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-10-23T23:19:11.063098779 0.217594s notice: Server ready, "dean_ThinkPad_8qn" 57d81f57-e03c-4e9e-a652-3c7649dcf7f8
+2017-10-23T23:19:12.255237061 1.409733s info: Table d3bf9f63-3398-40f0-823b-274c7962874d: Starting a new Raft election for term 3.
+2017-10-23T23:19:12.341724774 1.496221s info: Table d3bf9f63-3398-40f0-823b-274c7962874d: This server is Raft leader for term 3. Latest log index is 5.
+2017-10-23T23:19:17.901301893 7.055799s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-10-23T23:19:17.901571970 7.056068s notice: Shutting down client connections...
+2017-10-23T23:19:17.901729792 7.056226s notice: All client connections closed.
+2017-10-23T23:19:17.901740531 7.056236s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-10-23T23:19:17.905984715 7.060481s notice: Storage engine shut down.
+2017-10-23T23:19:20.859694081 0.055034s notice: Running rethinkdb 2.3.6~0zesty (GCC 5.4.1)...
+2017-10-23T23:19:20.862800046 0.058143s notice: Running on Linux 4.10.0-37-generic x86_64
+2017-10-23T23:19:20.862897307 0.058237s notice: Loading data from directory /home/j/dev/HackMCR-2017/express/rethinkdb_data
+2017-10-23T23:19:20.941635451 0.136975s info: Automatically using cache size of 2163 MB
+2017-10-23T23:19:20.943370203 0.138710s notice: Listening for intracluster connections on port 29015
+2017-10-23T23:19:20.985123823 0.180464s notice: Listening for client driver connections on port 28015
+2017-10-23T23:19:20.985781671 0.181122s notice: Listening for administrative HTTP connections on port 8080
+2017-10-23T23:19:20.985786664 0.181126s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T23:19:20.985790059 0.181129s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T23:19:20.985793677 0.181133s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-10-23T23:19:20.985811896 0.181151s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-10-23T23:19:20.985815088 0.181154s notice: Server ready, "dean_ThinkPad_8qn" 57d81f57-e03c-4e9e-a652-3c7649dcf7f8
+2017-10-23T23:19:22.940766735 2.136107s info: Table d3bf9f63-3398-40f0-823b-274c7962874d: Starting a new Raft election for term 4.
+2017-10-23T23:19:23.013363432 2.208704s info: Table d3bf9f63-3398-40f0-823b-274c7962874d: This server is Raft leader for term 4. Latest log index is 8.
