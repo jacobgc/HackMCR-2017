@@ -1,16 +1,8 @@
-<style>
-    /* Show it's not fixed to the top */
-    
-    body {
-        min-height: 75rem;
-    }
-</style>
-
 <nav class="navbar navbar-expand-md navbar-light bg-light mb-4">
     <a class="navbar-brand" href="#">
         <img src="/img/coop-logo.svg" width="30" height="30" alt="">
     </a>
-    <a class="navbar-brand" href="/">The Co-Operstive Bereavement</a>
+    <a class="navbar-brand" href="/">Bereavement</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -29,17 +21,34 @@
                 <a class="nav-link" href="http://localhost:4567">Forum</a>
             </li>
 
+<<<<<<< HEAD
+=======
+            <% if (login) { %>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+
+            <% } else { %>
             <li class="nav-item">
                 <a class="nav-link" href="/signup">Sign up</a>
             </li>
+>>>>>>> 923aa67fdabf78f93b5868e6517cfdd3a34da6a5
 
-            <li class="nav-item">
-                <li class="nav-item" >
-                <a class="nav-link" href="/login">Login</a>
-            </li>
+
+            <% } %>
 
         </ul>
         <form class="form-inline mt-2 mt-md-0">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup">Sign up</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+            </ul>
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" style="background-color: #00a1cc; border-color: #00a1cc">Search</button>
         </form>
