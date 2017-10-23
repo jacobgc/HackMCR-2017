@@ -30,6 +30,10 @@ router.get('/events', function(req, res, next) {
     res.render('events', {});
 });
 
+router.get('/eventloc', function(req, res, next) {
+    res.render('eventLocation', {});
+});
+
 
 router.get('/profile', function(req, res, next) {
     res.render('profile', {});
