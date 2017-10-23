@@ -56,7 +56,7 @@ passport.use('local.signin', new LocalStrategy({
     passReqToCallback: true
 }, function(req, email, password, done) {
 
-    r.db('forum').table('users').filter(r.row('email').eq(email)).run()
+    r.db('signup').table('users').filter(r.row('email').eq(email)).run()
         .then((result) => {
             if (typeof result[0] == "undefined") {
                 return done(null, false, { message: 'no user with that emaail found' });
