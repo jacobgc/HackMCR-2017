@@ -22,7 +22,7 @@ router.get('/profile', function(req, res, next) {
 });
 
 router.get('/signup', function(req, res, next) {
-    res.render('signup');
+    res.render('signup',{user : req.user || false});
 });
 
 router.post('/signup', passport.authenticate('local.signup', {
