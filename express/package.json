@@ -28,8 +28,8 @@
     "path": "^0.12.7",
     "redis": "^2.8.0",
     "redis-cli": "^1.0.2",
-    "rethink-session": "^0.1.2",
     "request": "^2.83.0",
+    "rethink-session": "^0.1.2",
     "rethinkdb": "^2.3.3",
     "rethinkdbdash": "^2.3.31",
     "serve-favicon": "~2.4.5"

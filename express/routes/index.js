@@ -7,7 +7,7 @@ var assert = require('assert');
 /* GET home page. */
 router.get('/', function(req, res, next) {
     console.log(req.user);
-    res.render('index',{user : req.user || false});    
+    res.render('index', { user: req.user || false });
 });
 
 router.get('/logout', isLoggedIn, function(req, res) {
@@ -101,4 +101,12 @@ function notLoggedIn(req, res, next) {
 }
 router.get('/advice', function(req, res, next) {
     res.render('advice');
+});
+
+router.get('/lostSomeone', function(req, res, next) {
+    res.render('lostSomeone');
+});
+
+router.get('/howToTalk', function(req, res, next) {
+    res.render('howToTalk');
 });
