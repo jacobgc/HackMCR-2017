@@ -40,6 +40,15 @@ router.post('/login', passport.authenticate('local.signin', {
 }));
 
 router.get('/events', function(req, res, next) {
+    // https://api.meetup.com/find/events
+    // Get LAT/LON from get request
+    // Pick random 10 to show (Or a list, we have time)
+    // 75782a5064482072a5b1d4f4341181f
+    //wget https://api.meetup.com/find/events\?lat\=53.4929725\&lon\=-2.0759403\&key\=75782a5064482072a5b1d4f4341181f
+    var lat = req.query.lat;
+    var lon = req.query.lon;
+    console.log('Hello?');
+    console.log(lat,lon);
     res.render('events');
 });
 
