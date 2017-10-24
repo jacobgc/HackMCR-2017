@@ -5,7 +5,8 @@ var r = require('rethinkdbdash')();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index');
+    console.log(req.user);
+    res.render('index',{user : req.user || false});    
 });
 
 router.get('/logout', isLoggedIn, function(req, res) {
@@ -22,7 +23,7 @@ router.get('/profile', function(req, res, next) {
 });
 
 router.get('/signup', function(req, res, next) {
-    res.render('signup',{user : req.user || false});
+    res.render('signup');
 });
 
 router.post('/signup', passport.authenticate('local.signup', {

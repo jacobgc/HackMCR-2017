@@ -3,38 +3,56 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var r = require('rethinkdb');
 var session = require('express-session');
+var RDBStore = require('express-session-rethinkdb')(session);
 var passport = require('passport');
 var flash = require('connect-flash');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-var redis = require('redis');
-var redisStore = require('connect-redis')(session);
-var client = redis.createClient();
 
 var app = express();
+
 
 require('./config/passport');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(cookieParser());
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+var rdbStore = new RDBStore({
+  connectOptions: {
+    servers: [
+      { host: 'localhost', port: 28015 }
+    ],
+    db: 'signup',
+    discovery: false,
+    pool: true,
+    buffer: 50,
+    max: 1000,
+    timeout: 20,
+    timeoutError: 1000
+  },
+  table: 'session',
+  sessionTimeout: 86400000,
+  flushInterval: 60000,
+  debug: false
+});
+
 app.use(session({
-  secret: 'randompassword',
-  store: new redisStore({ host: 'localhost', port: 6379, client: client, ttl: 86400 }),
-  resave: true,
-  saveUninitialized: true
+  key: 'sid',
+  secret: 'my5uperSEC537(key)!',
+  cookie: { maxAge: 860000 },
+  store: rdbStore
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
