@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 
+<style>
+@media screen and (min-width: 401px) and (max-width: 1024px) {
+  .bPicture { display: none; }   /* hide it elsewhere */
+}
+</style>
+
 <body background="/img/spring-tree-flowers-meadow-60006.jpeg" style="height: 100%">
     <% include ./header.ejs %>
         <div class="container">
@@ -20,8 +26,8 @@
                             <h1 class="display-5" style="text-align: center">The Co-Operative Bereavement</h1>
                             <hr class="my-2">
                             <div class="row">
-                                <div class="col">
-                                    <img src="/img/bereavement.png" width="100%" height="80%" style="position: relative; top: 50%; transform: translateY(-50%);"></img>
+                                <div class="col bPicture">
+                                    <img src="/img/bereavement.png" class="bPicture" width="100%" height="80%" style="position: relative; top: 50%; transform: translateY(-50%);"></img>
                                 </div>
                                 <div class="col">
                                     <p style="text-align: center; position: relative; top: 50%; transform: translateY(-50%);">This is a place where people who have lost someone close to them can connect with other people who are in the same situation. You can access information about local events you can attend and share their thoughts and
