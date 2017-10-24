@@ -96,3 +96,6 @@ function notLoggedIn(req, res, next) {
     }
     res.redirect('/');
 }
+router.get('/advice', function(req, res, next) {
+    res.render('advice');
+});
