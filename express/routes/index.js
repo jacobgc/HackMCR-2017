@@ -72,7 +72,8 @@ router.get('/events', function(req, res, next) {
         }
         console.log(resultsToEJS);
         res.render('events', {
-            events: resultsToEJS
+            events: resultsToEJS,
+            page: page
         });
     });
 });
