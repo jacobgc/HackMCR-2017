@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "assert": "^1.4.1",
     "bcrypt": "^1.0.3",
     "bcrypt-node": "^0.1.0",
     "bcrypt-nodejs": "0.0.3",
@@ -26,6 +27,7 @@
     "path": "^0.12.7",
     "redis": "^2.8.0",
     "redis-cli": "^1.0.2",
+    "request": "^2.83.0",
     "rethinkdb": "^2.3.3",
     "rethinkdbdash": "^2.3.31",
     "serve-favicon": "~2.4.5"
