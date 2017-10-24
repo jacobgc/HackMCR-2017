@@ -55,11 +55,13 @@ router.get('/events', function(req, res, next) {
     var lon = req.query.lon;
     var page = req.query.page || 0;
     var startItems = page * 10
+
         // Ensure LAT/LON provided
     assert(lat, 'Lat NOT defined');
     assert(lon, 'Lon NOT defined');
 
-    request('https://api.meetup.com/find/events?lat=' + lat + '&lon=' + lon + '&key=75782a5064482072a5b1d4f4341181f', function(error, response, body) {
+
+    request('https://api.meetup.com/find/groups?lat=' + lat + '&lon=' + lon + '&key=75782a5064482072a5b1d4f4341181f&upcoming_events=true&', function(error, response, body) {
         var results = JSON.parse(body);
         var resultsToEJS = [];
         for (var index = startItems; index < startItems + 11; index++) {
@@ -79,6 +81,7 @@ router.get('/events', function(req, res, next) {
         });
     });
 });
+
 
 router.get('/eventloc', function(req, res, next) {
     res.render('eventLocation');
