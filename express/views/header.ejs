@@ -28,6 +28,12 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us
+                </a>
+            </li>
+
         </ul>
 
         <%= this.user %>
@@ -57,10 +63,29 @@
                     </a>
                 </li>
             </ul>
-            <input class="form-control mr-sm-2" type="text" placeholder="Search the Forum" aria-label="Search">
-            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" style="background-color: #00a1cc; border-color: #00a1cc">Search</button>
+            <input id="searchBox" class="form-control mr-sm-2" onkeypress="handle(event)" type="text" placeholder="Search the forum" aria-label="Search">
+            <button class="btn my-2 my-sm-0" type="submit" style="background-color: #00a1cc; border-color: #00a1cc; color: #fff">Search</button>
         </form>
 
+<<<<<<< HEAD
         <% } %>
+=======
+        <script>
+            function handle(e) {
+                if (e.keyCode === 13) {
+                    e.preventDefault(); // Ensure it is only this code that rusn
+                    window.location.replace("http://localhost:4567/search?term=\"" + document.getElementById('searchBox').value + "\"");
+                }
+            }
+
+            function runSearch() {
+                window.location.replace("http://stackoverflow.com");
+                console.log("http://localhost:4567/search?term=\"" + document.getElementById('searchBox').value + "\"")
+                window.location.href = "http://localhost:4567/search?term=\"" + document.getElementById('searchBox').value +
+                    "\"";
+            }
+        </script>
+
+>>>>>>> 07842a92cbf3e4934a75b2164b87b46a0340fef4
     </div>
 </nav>
