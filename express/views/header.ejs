@@ -28,6 +28,12 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us
+                </a>
+            </li>
+
         </ul>
         <form class="form-inline mt-2 mt-md-0">
             <ul class="navbar-nav mr-auto">
@@ -43,14 +49,14 @@
                 </li>
             </ul>
             <input id="searchBox" class="form-control mr-sm-2" onkeypress="handle(event)" type="text" placeholder="Search the forum" aria-label="Search">
-            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" style="background-color: #00a1cc; border-color: #00a1cc">Search</button>
+            <button class="btn my-2 my-sm-0" type="submit" style="background-color: #00a1cc; border-color: #00a1cc; color: #fff">Search</button>
         </form>
 
         <script>
             function handle(e) {
                 if (e.keyCode === 13) {
                     e.preventDefault(); // Ensure it is only this code that rusn
-                    window.location.replace("http://localhost:4567/search?term=\"" + document.getElementById('searchBox').value +"\"");
+                    window.location.replace("http://localhost:4567/search?term=\"" + document.getElementById('searchBox').value + "\"");
                 }
             }
 
