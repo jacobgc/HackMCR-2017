@@ -39,6 +39,9 @@ router.post('/login', passport.authenticate('local.signin', {
     failureRedirect: '/login'
 }));
 
+router.get('/contact', function(req, res, next) {
+    res.render('contact');
+});
 router.get('/events', function(req, res, next) {
     // https://api.meetup.com/find/events
     // Get LAT/LON from get request
@@ -48,7 +51,7 @@ router.get('/events', function(req, res, next) {
     var lat = req.query.lat;
     var lon = req.query.lon;
     console.log('Hello?');
-    console.log(lat,lon);
+    console.log(lat, lon);
     res.render('events');
 });
 
