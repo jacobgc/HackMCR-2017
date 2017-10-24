@@ -14,7 +14,7 @@ r.connect({
 });
 
 passport.serializeUser(function(user, done) {
-    done(null, user.username);
+    done(null, user);
 });
 
 passport.deserializeUser(function(username, done) {
