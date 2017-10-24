@@ -14,7 +14,7 @@
     }
 </style>
 
-<body background="img/flowers.jpg" style="height: 100%">
+<body background="img/meadow.jpg" style="height: 100%">
     <% include ./header.ejs %>
         <div class="jumbotron" style="max-width: 1150px; display: block; margin: auto; background: rgba(255,255,255, 0.45); padding-bottom: 25px;">
             <h1 class="display-4">First off, where would you like to find events?</h1>
@@ -79,12 +79,11 @@
             }
 
             function showEvents() {
-                  window.location = "/events?lat= "+ pos.lat +"&lon=" + pos.lng +"&page=0";
-              }
-          </script>
-          <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoHbeVzTVtYJzJtUQOrn3hYhyVampq1Vk&callback=initMap">
-          </script>
+                window.location = "/events?lat= " + pos.lat + "&lon=" + pos.lng + "&page=0";
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoHbeVzTVtYJzJtUQOrn3hYhyVampq1Vk&callback=initMap">
+        </script>
 </body>
 
 </html>
