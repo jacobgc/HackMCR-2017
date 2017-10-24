@@ -2,13 +2,14 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var r = require('rethinkdbdash')();
-
+var request = require('request');
+var assert = require('assert');
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
     res.render('index');
 });
 
-router.get('/logout', isLoggedIn, function(req, res) {
+router.get('/logout', isLoggedIn, function (req, res) {
     req.logout();
     res.redirect('/');
 });
@@ -17,11 +18,11 @@ router.get('/logout', isLoggedIn, function(req, res) {
 //     next();
 // });
 
-router.get('/profile', function(req, res, next) {
+router.get('/profile', function (req, res, next) {
     res.render('profile');
 });
 
-router.get('/signup', function(req, res, next) {
+router.get('/signup', function (req, res, next) {
     res.render('signup');
 });
 
@@ -30,7 +31,7 @@ router.post('/signup', passport.authenticate('local.signup', {
     failureRedirect: '/signup'
 }));
 
-router.get('/login', function(req, res, next) {
+router.get('/login', function (req, res, next) {
     res.render('login');
 });
 
@@ -39,7 +40,7 @@ router.post('/login', passport.authenticate('local.signin', {
     failureRedirect: '/login'
 }));
 
-router.get('/events', function(req, res, next) {
+router.get('/events', function (req, res, next) {
     // https://api.meetup.com/find/events
     // Get LAT/LON from get request
     // Pick random 10 to show (Or a list, we have time)
@@ -47,12 +48,32 @@ router.get('/events', function(req, res, next) {
     //wget https://api.meetup.com/find/events\?lat\=53.4929725\&lon\=-2.0759403\&key\=75782a5064482072a5b1d4f4341181f
     var lat = req.query.lat;
     var lon = req.query.lon;
-    console.log('Hello?');
-    console.log(lat,lon);
-    res.render('events');
+    var page = req.query.page || 0;
+    var startItems = page * 10
+    // Ensure LAT/LON provided
+    assert(lat, 'Lat NOT defined');
+    assert(lon, 'Lon NOT defined');
+
+    request('https://api.meetup.com/find/events?lat=' + lat + '&lon=' + lon + '&key=75782a5064482072a5b1d4f4341181f', function (error, response, body) {
+        var results = JSON.parse(body);
+        var resultsToEJS = [];
+        for (var index = startItems; index < startItems + 11; index++) {
+            try {
+                results[index].description = results[index].description.replace(/<[^>]*>/g, '');
+                var length = 200;
+                results[index].description = results[index].description.substring(0, length);
+                resultsToEJS.push(results[index]);
+            } catch (err) {
+                console.log('Cant get description, oh well');
+            }
+        }
+        res.render('events', {
+            events: resultsToEJS
+        });
+    });
 });
 
-router.get('/eventloc', function(req, res, next) {
+router.get('/eventloc', function (req, res, next) {
     res.render('eventLocation');
 });
 
