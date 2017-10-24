@@ -24,11 +24,8 @@ router.get('/profile', function(req, res, next) {
 });
 
 router.get('/signup', function(req, res, next) {
-<<<<<<< HEAD
     res.render('signup');
-=======
     res.render('signup', { user: req.user || false });
->>>>>>> 07842a92cbf3e4934a75b2164b87b46a0340fef4
 });
 213312
 router.post('/signup', passport.authenticate('local.signup', {
