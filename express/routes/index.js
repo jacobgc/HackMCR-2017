@@ -25,7 +25,7 @@ router.get('/profile', function(req, res, next) {
 router.get('/signup', function(req, res, next) {
     res.render('signup', { user: req.user || false });
 });
-
+213312
 router.post('/signup', passport.authenticate('local.signup', {
     successRedirect: '/',
     failureRedirect: '/signup'
@@ -70,6 +70,7 @@ router.get('/events', function(req, res, next) {
                 console.log('Cant get description, oh well');
             }
         }
+        console.log(resultsToEJS);
         res.render('events', {
             events: resultsToEJS
         });
