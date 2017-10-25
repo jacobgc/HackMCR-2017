@@ -75,6 +75,7 @@ router.get('/events', function(req, res, next) {
     });
 });
 
+
 router.get('/eventloc', function(req, res, next) {
     res.render('eventLocation');
 });
