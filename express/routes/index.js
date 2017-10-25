@@ -27,7 +27,7 @@ router.get('/signup', function(req, res, next) {
     res.render('signup');
     res.render('signup', { user: req.user || false });
 });
-213312
+
 router.post('/signup', passport.authenticate('local.signup', {
     successRedirect: '/',
     failureRedirect: '/signup'
@@ -46,21 +46,16 @@ router.get('/contact', function(req, res, next) {
     res.render('contact');
 });
 router.get('/events', function(req, res, next) {
-    // https://api.meetup.com/find/events
-    // Get LAT/LON from get request
-    // Pick random 10 to show (Or a list, we have time)
-    // 75782a5064482072a5b1d4f4341181f
-    //wget https://api.meetup.com/find/events\?lat\=53.4929725\&lon\=-2.0759403\&key\=75782a5064482072a5b1d4f4341181f
-    var lat = req.query.lat;
+    var lat = req.query.lat; // Get required variables from the client
     var lon = req.query.lon;
     var page = req.query.page || 0;
     var startItems = page * 10
-        // Ensure LAT/LON provided
-    assert(lat, 'Lat NOT defined');
+
+    assert(lat, 'Lat NOT defined'); // Throw error if required variables not given
     assert(lon, 'Lon NOT defined');
 
     request('https://api.meetup.com/find/events?lat=' + lat + '&lon=' + lon + '&key=75782a5064482072a5b1d4f4341181f', function(error, response, body) {
-        var results = JSON.parse(body);
+        var results = JSON.parse(body); // Make request to the API and parse the data ready to be given to EJS
         var resultsToEJS = [];
         for (var index = startItems; index < startItems + 11; index++) {
             try {
@@ -73,7 +68,7 @@ router.get('/events', function(req, res, next) {
             }
         }
         console.log(resultsToEJS);
-        res.render('events', {
+        res.render('events', { // Render the page with EJS and the given data
             events: resultsToEJS,
             page: page
         });
@@ -83,8 +78,6 @@ router.get('/events', function(req, res, next) {
 router.get('/eventloc', function(req, res, next) {
     res.render('eventLocation');
 });
-
-module.exports = router;
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
@@ -110,3 +103,5 @@ router.get('/lostSomeone', function(req, res, next) {
 router.get('/howToTalk', function(req, res, next) {
     res.render('howToTalk');
 });
+
+module.exports = router;
